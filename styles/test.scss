@@ -1,0 +1,565 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald:300,400,700");
+$menuBColor: #333;
+$paddingUp: 0.5rem;
+$paddingleft: 07rem;
+$txtColor: #fff;
+$fontSize: 1em;
+$finS: 1rem;
+$bottombrColor: #555;
+$barsColor: #999;
+$barsH: 0.2rem;
+$barsWidth: 1.2em;
+$bgBtnColor: #006d6d;
+$main-color: #0f3057;
+$h2-color: #00587a;
+$p-color: #008891;
+$body-color: #e7e7de;
+$note-color: #c7c7ba;
+$main-color-for-nav: rgba(15, 48, 87, 0.95);
+$h3lineh: 2rem;
+$h2lineh: 3.45rem;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+a:hover {
+  text-decoration: none !important ;
+}
+// ---------------------------nav------------------
+nav {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  background: $menuBColor;
+  padding: 0 $paddingleft;
+
+  .menu {
+    li {
+      font-size: $fontSize;
+      padding: 1rem 0.3rem;
+      a {
+        display: block;
+        color: $txtColor;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    margin-block-end: 0px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  a {
+    font-size: 1.5rem;
+  }
+}
+.button.secondary {
+  border-bottom: 1px $bottombrColor solid;
+}
+.toggle {
+  order: 1;
+  cursor: pointer;
+}
+.item.button {
+  order: 2;
+}
+.item {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: none;
+}
+.item.active {
+  display: block;
+}
+.bars {
+  background: $barsColor;
+  display: inline-block;
+  height: $barsH;
+  position: relative;
+  width: 1.2em;
+  &::before {
+    content: "";
+    background: $barsColor;
+    display: inline-block;
+    height: 0.2rem;
+    position: absolute;
+    width: $barsWidth;
+    top: 0.4rem;
+  }
+  &::after {
+    content: "";
+    background: $barsColor;
+    display: inline-block;
+    height: 0.2rem;
+    position: absolute;
+    width: 1.2em;
+    top: -0.4rem;
+  }
+}
+// =====================================header ========================
+
+// html {
+//   font-size: 100%; // normally 16px
+// }
+
+// body {
+//   font-family: "Open Sans", sans-serif;
+//   color: #fff;
+//   line-height: 1.6;
+// }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header-container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/imgs/imgBk3.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.items {
+  padding: 0 2em 0 2em;
+  text-align: center;
+  p {
+    margin-top: $fontSize;
+  }
+  h1 {
+    text-align: center;
+    font-family: "Oswald", sans;
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: $h2lineh;
+  }
+  h3 {
+    font-size: $fontSize;
+    line-height: $h3lineh;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: $finS;
+  display: inline-block;
+  line-height: 1.25rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+
+  &.btn-primary {
+    color: $txtColor;
+    background-color: $menuBColor;
+    border-color: $bottombrColor;
+
+    &:hover {
+      color: #fff;
+      background-color: $menuBColor;
+      border-color: $barsColor;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+
+// }
+
+@media (min-width: 992px) {
+  .btn {
+    line-height: $fontSize;
+  }
+  .items {
+    width: 80%;
+    p {
+      font-size: $fontSize;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .items {
+    width: 60%;
+  }
+}
+//===========================Form=====================
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin: auto;
+  #sign-up,
+  #sign-in {
+    padding: 0px 20%;
+    margin: 20% 0px;
+  }
+  #sign-up {
+    border-right: #555 2px solid;
+  }
+}
+.btn-info {
+  background-color: teal !important;
+}
+@media only screen and (max-width: 700px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    // width: 90%;
+    #sign-up,
+    #sign-in {
+      padding: 0px;
+      margin: 20% 0px;
+    }
+    #sign-up {
+      border-right: 0px;
+    }
+  }
+}
+// ===============================Footer=========================
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: $menuBColor;
+  color: $txtColor;
+  padding: 3rem 0;
+
+  .flex-container {
+    a {
+      transition: 0.5s;
+      i {
+        margin: 1rem;
+        font-size: 2.5rem;
+      }
+      color: $bgBtnColor;
+      &:visited {
+        color: $bgBtnColor;
+      }
+      &:hover {
+        color: $txtColor;
+      }
+    }
+  }
+}
+// ========================================================
+@media all and (min-width: 468px) {
+  .menu {
+    justify-content: center;
+  }
+  .logo {
+    flex: 1;
+  }
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  .toggle {
+    order: 2;
+  }
+  .button.secondary {
+    border: 0;
+    a {
+      background-color: transparent;
+      &:hover {
+        columns: #ddd;
+      }
+    }
+  }
+  .button {
+    a {
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      background-color: teal;
+      border-radius: 50em;
+      &:hover {
+        transition: all 0.25s;
+      }
+    }
+    &:not(.secondary) {
+      a {
+        &:hover {
+          background-color: $bgBtnColor;
+          border-color: #005959;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .item {
+    display: block;
+    width: auto;
+    order: 1;
+  }
+  .toggle {
+    display: none;
+  }
+  .logo {
+    order: 0;
+  }
+  .button {
+    order: 2;
+  }
+  .menu {
+    li {
+      padding: 1em 0.8em;
+    }
+    li.button {
+      padding-right: 0;
+    }
+  }
+}
+// ===================================== To do list Styling ==========================
+.form-todo {
+  min-height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input,
+  button {
+    // margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background: $txtColor;
+  }
+  button {
+    // padding: 0.5rem;
+    color: $bgBtnColor;
+    cursor: pointer;
+    background: $txtColor;
+    transition: all 0.3s ease;
+    :hover {
+      background-color: $bgBtnColor;
+      color: $txtColor;
+      i.fas {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+    }
+  }
+  input[type="number"] {
+    width: 4.5rem;
+    text-align: center;
+  }
+  .todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .todo-list {
+      min-width: 30%;
+    }
+  }
+}
+.localContainerBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    margin: 0 1rem 1rem 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    border: none;
+    box-shadow: 0 0 12px rgba(15, 48, 87, 0.95);
+    border-radius: 12px;
+    background: $txtColor;
+    color: $bottombrColor;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  h2 {
+    padding: $paddingUp;
+    color: $bottombrColor;
+  }
+}
+table {
+  margin-top: 2rem;
+  border-collapse: collapse;
+  width: 60rem;
+  tr {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+  tbody {
+    tr,
+    td {
+      display: flex;
+      margin: auto;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+    }
+  }
+}
+@media (max-width(650px)) {
+  form {
+    flex-direction: column;
+    input {
+      // display: block;
+      // flex-direction: row;
+      // width: 20%;
+    }
+  }
+}
+//========================= Calculator Styling ========================
+.dark {
+  // filter: invert(100%);
+  background-color: #333;
+  nav {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.19);
+  }
+  footer {
+    box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, 0.19);
+  }
+}
+.checkbox {
+  opacity: 0;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  margin: 0.5rem;
+  margin-left: 1rem;
+  padding: 5px;
+
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.calcContainer {
+  max-width: 30rem;
+  margin: 0 auto;
+  // border: 1px solid black;
+  border-radius: 12px;
+  .output input {
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    border-bottom: 1px solid $barsColor;
+    padding: 1.25rem;
+    text-align: center;
+    font-size: 1.875rem;
+  }
+  .btnWrapper {
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1rem;
+    .but {
+      font-weight: bold;
+      background-color: #fff;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.19);
+      border: none;
+      outline: none;
+      padding: 1.25rem;
+      color: $menuBColor;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      border: 0;
+    }
+    .opr {
+      // background-color: $bgBtnColor;
+      color: #3b8a8a;
+      font-weight: bold;
+    }
+    .zero {
+      background-color: $bgBtnColor;
+      color: #fff;
+      grid-column: span 3;
+      border-radius: 20px;
+    }
+    .ac {
+      background-color: $bgBtnColor;
+      color: #fff;
+      grid-column: span 2;
+      border-radius: 20px;
+    }
+    .equal {
+      background-color: $bgBtnColor;
+      color: #fff;
+      grid-column: span 2;
+      border-radius: 20px;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .but {
+    border-radius: 7rem;
+    font-size: 20px;
+    //  color: red;
+    //  background: white;
+    //  border: white ;
+    //  box-shadow: whitesmoke 0.5px 0.5px 0.5px 0.3px;
+    margin: 1px;
+  }
+  .calcContainer {
+    //  display: grid;
+    margin: auto;
+
+    width: 98%;
+    min-height: 50vh;
+    grid-template-columns: repeat(5, 70px);
+    grid-template-rows: minmax(90px, auto) repeat(5, 70px);
+    justify-content: center;
+  }
+}

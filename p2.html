@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 8px;
+        /* text-align: left; */
+        border-bottom: 1px solid #ddd;
+      }
+      body {
+        font-family: sans-serif;
+        background-image: linear-gradient(120deg, #303437, #CD7A65, #D9CED6);
+      }
+      tr:hover {
+        background-color: #F5F5F5;
+      }
+    </style>
+    <link rel="stylesheet" href="/styles/test.css" />
+  </head>
+  <body>
+    <form class="form-todo">
+      <!-- <input type="text" placeholder="Key" id="key"> -->
+      <div class="">
+        <input
+          type="text"
+          placeholder="Value"
+          id="value"
+          class="inputs todo-inp"
+        />
+        <input type="number" maxlength="2" placeholder="HH" id="h" class="inputs" />
+        <input type="number" maxlength="2" placeholder="MM" id="m" class="inputs" />
+        <input type="color" id="bcolor" value="#ff0000">
+        <input type="color" id="tcolor" value="#000000">
+        <button class="todo-btn" onclick="localSubmit()">
+          <i class="fas fa-plus-square"></i>
+        </button>
+        <input type="reset" value="Clear" onclick="clearr()" />
+      </div>
+    </form>
+    <div class="localContainerBtn">
+      <button onclick="localSubmit()">Local Submit</button>
+      <h2>Local Storage</h2>
+    </div>
+    <div class="todo-container">
+      <table id="localTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>task</th>
+            <th>time</th>
+            <th>done</th>
+          </tr>
+        </thead>
+        <tbody class="todo-list todo"></tbody>
+      </table>
+    </div>
+    <script src="script/toDo.js"></script>
+  </body>
+</html>
